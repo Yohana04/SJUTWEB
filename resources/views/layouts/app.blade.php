@@ -95,7 +95,7 @@
                         </div>
                         <div class="flex flex-col">
                             <span class="text-[10px] font-black text-white uppercase tracking-widest">{{ Auth::user()->name }}</span>
-                            <form method="POST" action="{{ route('logout') }}">
+                            <form method="POST" action="{{ route('logout') }}" id="logout-form">
                                 @csrf
                                 <button type="submit" class="text-[8px] font-black text-white/40 uppercase tracking-widest hover:text-[#FDB913] transition-colors mt-0.5">
                                     Logout
@@ -196,6 +196,37 @@
                     });
                 }
             });
+
+            // Auto Logout after 3 minutes of inactivity
+            let idleTime = 0;
+            const idleLimit = 3 * 60; // 3 minutes in seconds
+            let isLoggingOut = false;
+            
+            const idleInterval = setInterval(() => {
+                if(isLoggingOut) return;
+                idleTime++;
+                if (idleTime >= idleLimit) {
+                    isLoggingOut = true;
+                    clearInterval(idleInterval);
+                    
+                    Swal.fire({
+                        title: 'Session Expired',
+                        text: 'You have been automatically logged out due to 3 minutes of inactivity.',
+                        icon: 'info',
+                        timer: 3000,
+                        timerProgressBar: true,
+                        showConfirmButton: false,
+                        allowOutsideClick: false
+                    }).then(() => {
+                        document.getElementById('logout-form').submit();
+                    });
+                }
+            }, 1000);
+
+            // Zero the idle timer on user activity
+            ['mousemove', 'keydown', 'scroll', 'click', 'touchstart'].forEach(evt => 
+                document.addEventListener(evt, () => idleTime = 0, true)
+            );
         });
     </script>
 </body>
