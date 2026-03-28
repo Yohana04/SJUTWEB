@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --coict-blue: #2B579A; /* Official UDSM Blue */
+    --coict-blue-dark: #1a3a63;
+    --coict-blue-light: #2563EB;
+    --coict-gold: #FDB913; /* Official UDSM Gold accent */
+    --coict-gold-hover: #E6A700;
+    --coict-white: #ffffff;
+    --coict-gray-light: #F3F4F6;
+    --coict-text-dark: #1f2937;
+    --coict-text-muted: #6b7280;
+    
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-blur: blur(8px);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--coict-text-dark);
+    background-color: var(--coict-white);
+}
+
+h1, h2, h3, h4, .font-serif {
+    font-family: 'Playfair Display', serif;
+}
+
+.font-display {
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Header Utilities */
+.header-utility-bar {
+    background-color: var(--coict-blue);
+    color: white;
+}
+
+.main-nav-bar {
+    background-color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.btn-blue {
+    background-color: var(--coict-blue);
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-blue:hover {
+    background-color: var(--coict-blue-light);
+    transform: translateY(-1px);
+}
+
+.btn-gold {
+    background-color: var(--coict-gold);
+    color: var(--coict-blue-dark);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: var(--coict-gold-hover);
+    box-shadow: 0 4px 12px rgba(253, 185, 19, 0.3);
+}
+
+/* Card Enhancements (UDSM Style) */
+.coict-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.25rem; /* More boxy/professional */
+    transition: all 0.3s ease;
+}
+
+.coict-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-color: var(--coict-blue-light);
+}
+
+/* Event Date Overlay */
+.event-date-badge {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    background: var(--coict-blue);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 60px;
+    z-index: 10;
+}
+
+.event-date-badge .day {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.event-date-badge .month {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Stats Section */
+.stats-section {
+    background-color: var(--coict-blue);
+    color: white;
+}
+
+.stats-circle {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+/* Hero Section (Boxy & Traditional) */
+.hero-udsm {
+    position: relative;
+    background: #000;
+}
+
+.hero-udsm img {
+    opacity: 0.6;
+}
+
+.hero-overlay {
+    background: linear-gradient(to bottom, rgba(43, 87, 154, 0.4), rgba(0, 0, 0, 0.7));
+}
+
+/* Section Headings (UDSM Style) */
+.section-title-udsm {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2.25rem;
+    color: var(--coict-blue);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.section-title-udsm::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background: #e5e7eb;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeInUp 0.5s ease forwards;
+}
