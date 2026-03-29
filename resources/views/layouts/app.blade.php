@@ -75,7 +75,7 @@
                     </div>
 
                     <a href="{{ route('admin.audit.index') }}" class="flex items-center px-4 py-3 text-[10px] font-black uppercase tracking-widest transition-all rounded-sm {{ request()->routeIs('admin.audit.*') ? 'bg-white/10 text-white' : 'text-white/60 hover:bg-white/5 hover:text-white' }}">
-                        <span class="mr-3 opacity-50 text-base">📋</span> Audit Trail
+                        <span class="mr-3 opacity-50 text-base">📋</span> Audit log
                     </a>
                     
                     <div class="pt-6 pb-2">
