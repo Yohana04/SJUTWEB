@@ -43,6 +43,10 @@ Route::get('/students', function () { return view('students'); })->name('student
 Route::get('/alumni', function () { return view('alumni'); })->name('alumni');
 Route::get('/visitors', function () { return view('visitors'); })->name('visitors');
 
+// Pages
+Route::view('/terms', 'terms')->name('terms');
+Route::view('/policies', 'policies')->name('policies');
+
 // Academic & Research
 Route::get('/academic', function () { return view('academic'); })->name('academic');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');

@@ -324,8 +324,8 @@
                     <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] font-bold uppercase tracking-widest text-slate-500">
                         <p>&copy; {{ date('Y') }} Centre for Information and Communication Technology. All rights reserved.</p>
                         <div class="flex space-x-6">
-                            <a href="#" class="hover:text-white transition-colors">Policies</a>
-                            <a href="#" class="hover:text-white transition-colors">Terms</a>
+                            <a href="{{ route('policies') }}" class="hover:text-white transition-colors">Policies</a>
+                            <a href="{{ route('terms') }}" class="hover:text-white transition-colors">Terms</a>
                             <a href="#" class="hover:text-white transition-colors">Sitemap</a>
                         </div>
                     </div>
