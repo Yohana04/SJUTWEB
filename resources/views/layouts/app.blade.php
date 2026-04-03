@@ -137,6 +137,9 @@
             </main>
         </div>
     </div>
+    </main>
+
+</body>
     @stack('scripts')
     
     <!-- SweetAlert2 -->
